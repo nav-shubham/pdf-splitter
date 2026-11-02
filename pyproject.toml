@@ -1,0 +1,20 @@
+[project]
+name = "pdf-splitter"
+version = "0.1.0"
+description = "Split PDFs by bookmarks or page ranges into chapters and convert them to UTF-8 text files."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pymupdf>=1.23.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+split-pdf = "split_pdf:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["split_pdf.py"]
